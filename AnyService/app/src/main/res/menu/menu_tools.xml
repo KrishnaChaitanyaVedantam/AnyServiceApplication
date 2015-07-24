@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".ToolsActivity">
+    <item android:id="@+id/action_call" android:title="@string/call"
+        android:orderInCategory="100" android:icon="@mipmap/call" app:showAsAction="always"/>
+    <item android:id="@+id/action_chat" android:title="@string/chat"
+        android:orderInCategory="100" android:icon="@mipmap/chat" app:showAsAction="always"/>
+    <item android:id="@+id/action_overflow" android:actionLayout="@layout/overflow_menu_layout" android:title="@string/overflow"
+        android:orderInCategory="100" android:icon="@mipmap/overflow" app:showAsAction="always"/>
+</menu>

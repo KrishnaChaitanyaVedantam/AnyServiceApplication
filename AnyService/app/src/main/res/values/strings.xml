@@ -26,4 +26,6 @@
     <string name="overflow">Overflow</string>
     <string name="nihar_info">Nihar Info</string>
     <string name="title_activity_chat">ChatActivity</string>
+
+    <string name="loan_amount">Loan Amount</string>
 </resources>

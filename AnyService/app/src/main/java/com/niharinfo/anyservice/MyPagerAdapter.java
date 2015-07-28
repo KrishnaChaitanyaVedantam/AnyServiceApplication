@@ -9,8 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 public class MyPagerAdapter extends FragmentPagerAdapter {
 
-    private final String[] TITLES = {"Personal Loan","Home Loan","Top Paid","Top Free","Top Grossing",
-    "Top New Paid"};
+    private final String[] TITLES = {"Emi Calculator","Home Loan","Personal Loan","Top Paid","Top Free","Top Grossing",};
 
     public MyPagerAdapter(FragmentManager fm){
         super(fm);
@@ -31,11 +30,11 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
         switch (position){
             case 0:
-                return FragmentPersonalLoan.newInstance(0, "Personal Loan");
+                return FragmentEmiCalculator.newInstance(0, "Emi Calculator");
             case 1:
                 return HomeFragment.newInstance(1,"Home Loan");
             case 2:
-                return HomeFragment.newInstance(position,"Home Loan");
+                return FragmentPersonalLoan.newInstance(position,"Personal Loan");
             case 3:
                 return HomeFragment.newInstance(position,"Home Loan");
             case 4:

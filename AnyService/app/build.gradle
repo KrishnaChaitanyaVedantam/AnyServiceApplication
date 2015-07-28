@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.+'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.konotor:KonotorActivity:3.+'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
 }

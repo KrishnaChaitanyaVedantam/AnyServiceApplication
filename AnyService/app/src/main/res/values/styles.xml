@@ -25,10 +25,49 @@
         <item name="android:minWidth">0dp</item>
         <item name="android:maxWidth">50dp</item>
     </style>
-    
-   <!--<style name="MyActionbarTabs" parent="android:Widget.Holo.ActionBar">
-        <item name="android:actionBarDivider">@drawable/actionbar_tab_indicator</item>
-       <item name="android:actionBarTabStyle">@style/MyActionbarTabs</item>
-    </style>-->
+
+    <style name="txtEmiHeader" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/txt_emi_background</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="edtLoanAmount" parent="android:Widget.EditText">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:background">@drawable/edt_rounded_corners</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="txtRupee" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="android:background">@drawable/txt_rupee</item>
+    </style>
+
+    <style name="CustomSeekBar2" parent="android:Widget.SeekBar">
+        <item name="android:progressDrawable">@drawable/seekbar_custom</item>
+        <item name="android:thumb">@drawable/custom_seekbar_thumb</item>
+        <item name="android:thumbOffset">0dip</item>
+    </style>
 
 </resources>

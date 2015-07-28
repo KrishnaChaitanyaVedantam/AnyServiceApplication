@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtLoanAmoutEmi"
+        android:layout_alignParentLeft="true"
+        android:text="@string/loan_amount"
+        style="@style/txtEmiHeader"/>
+
+    <EditText
+        android:id="@+id/edtEmiLoanAmount"
+        android:hint="amount"
+        android:inputType="number"
+        android:maxLength="7"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        style="@style/edtLoanAmount"
+        />
+
+    <TextView
+        android:id="@+id/txtRupee"
+        android:layout_toLeftOf="@id/edtEmiLoanAmount"
+        android:text="₹"
+        style="@style/txtRupee"
+        />
+
+    <!--<SeekBar
+        android:layout_below="@id/txtRupee"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:progressDrawable="@drawable/seekbar_custom"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:thumb="@mipmap/seekbar_thumb"
+        android:indeterminate="false"
+        android:layout_margin="10dp"
+        />-->
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtRupee"
+        android:max="2000000"
+        style="@style/CustomSeekBar2"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="50dp"/>
+
+
+
+    <!--<SeekBar
+    android:progressDrawable="@drawable/seekbar_custom"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:thumb="@mipmap/seekbar_thumb"
+        android:layout_below="@id/txtRupee"
+        android:layout_margin="10dp"
+        android:indeterminate="false"
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/styled_progress"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:thumb="@drawable/thumbler_small"
+        android:indeterminate="false" />-->
+
+</RelativeLayout>

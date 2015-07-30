@@ -14,9 +14,14 @@
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="colorPrimary">@color/blue_gray_primary</item>
-        <item name="colorPrimaryDark">@color/blue_gray_primary_dark</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/grey</item>
         <item name="windowNoTitle">true</item>
+        <item name="drawerArrowStyle">@style/MyDrawerArrowToggle</item>
+    </style>
+
+    <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#000000</item>
     </style>
 
     <style name="ActionButtonStyle" parent="Widget.AppCompat.ActionButton">
@@ -67,7 +72,29 @@
     <style name="CustomSeekBar2" parent="android:Widget.SeekBar">
         <item name="android:progressDrawable">@drawable/seekbar_custom</item>
         <item name="android:thumb">@drawable/custom_seekbar_thumb</item>
-        <item name="android:thumbOffset">0dip</item>
+        <item name="android:thumbOffset">0dp</item>
+    </style>
+
+    <style name="txtEmi" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="txtEFirst" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="imgLine">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/line</item>
     </style>
 
 </resources>

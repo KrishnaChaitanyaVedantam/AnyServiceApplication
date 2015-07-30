@@ -8,4 +8,6 @@
     <color name="app_blue">#085f9b</color>
     <color name="app_orange">#f49d2a</color>
     <color name="app_gray">#cccccc</color>
+    <color name="app_gray_lite">#e3e3e3</color>
+    <color name="app_light_green">#8bc343</color>
 </resources>

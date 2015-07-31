@@ -97,4 +97,42 @@
         <item name="android:src">@drawable/line</item>
     </style>
 
+    <style name="edtTotalAmount" parent="android:Widget.EditText">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:background">@drawable/edt_rounded_corners</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="txtMonthlyEmi" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="android:background">@drawable/txt_rupee</item>
+    </style>
+
+    <style name="btnQuotes" parent="android:Widget.Button">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_background_green</item>
+        <item name="android:text">@string/btn_get_quotes</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

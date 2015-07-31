@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.niharinfo.anyservice.Helper.DecimalDigitsInputFilter;
 
@@ -26,10 +27,12 @@ import java.text.DecimalFormat;
 public class FragmentEmiCalculator extends Fragment {
 
     SeekBar seekBar,seekBarPercentage,seekbarTimer;
-    //FloatSeekBar seekBarPercentage;
     EditText edtEmiLoanAmount,edtRateOfInterest,edtLoanTenure;
+    TextView txtEmiAmount;
     String i;
     String r;
+    Double principalAmount,rateOfInterest,loanTenure,numerator,denominator,powerValue,emiAmount,originalRoi;
+    BigDecimal finalEmiAmount;
 
     public static FragmentEmiCalculator newInstance(int page, String title) {
         FragmentEmiCalculator fragmentFirst = new FragmentEmiCalculator();
@@ -53,7 +56,7 @@ public class FragmentEmiCalculator extends Fragment {
         edtRateOfInterest = (EditText)v.findViewById(R.id.edtEmiLoanROI);
         edtEmiLoanAmount = (EditText)v.findViewById(R.id.edtEmiLoanAmount);
         edtLoanTenure = (EditText)v.findViewById(R.id.edtLoanTenure);
-
+        txtEmiAmount = (TextView)v.findViewById(R.id.txtEmiAmount);
         //Calculation
         double amount=1000.0,Rate;
         int duration1=2;
@@ -87,7 +90,7 @@ public class FragmentEmiCalculator extends Fragment {
                 }else{
                     seekbarTimer.setProgress(Integer.parseInt(i));
                 }
-
+                //isValid();
             }
 
             @Override
@@ -118,6 +121,7 @@ public class FragmentEmiCalculator extends Fragment {
                     int m = Math.round(a);
                     seekBarPercentage.setProgress(((int) a));
                 }
+                //isValid();
             }
 
             @Override
@@ -147,7 +151,7 @@ public class FragmentEmiCalculator extends Fragment {
                 }else{
                     seekBar.setProgress(Integer.parseInt(i));
                 }
-
+                //isValid();
             }
 
             @Override
@@ -159,12 +163,41 @@ public class FragmentEmiCalculator extends Fragment {
         return v;
     }
 
+    private boolean isValid(){
+
+        if(edtEmiLoanAmount.getText().toString().equalsIgnoreCase("0")||edtLoanTenure.getText().toString().equalsIgnoreCase("0")||edtRateOfInterest.getText().toString().equalsIgnoreCase("0.0")||edtEmiLoanAmount.getText().toString().equalsIgnoreCase("")||edtRateOfInterest.getText().toString().equalsIgnoreCase("")||edtLoanTenure.getText().toString().equalsIgnoreCase("")){
+            //return false;
+        }else{
+            principalAmount = Double.parseDouble(edtEmiLoanAmount.getText().toString());
+            rateOfInterest = Double.parseDouble(edtRateOfInterest.getText().toString());
+            loanTenure = Double.parseDouble(edtLoanTenure.getText().toString());
+            originalRoi = (rateOfInterest/12.0)/100;
+            powerValue = Math.pow((1+originalRoi),loanTenure);
+            numerator = principalAmount*originalRoi*powerValue;
+            denominator = powerValue-1;
+            emiAmount =  numerator/denominator;
+            double t = emiAmount;
+            if(Double.isNaN(t)){
+                txtEmiAmount.setText("0");
+            }else if(Double.isInfinite(t)){
+                txtEmiAmount.setText("0");
+            }else{
+                BigDecimal b = new BigDecimal(t).setScale(2,BigDecimal.ROUND_HALF_UP);
+                txtEmiAmount.setText(b.toString());
+            }
+
+            return true;
+        }
+        return false;
+    }
+
     private SeekBar.OnSeekBarChangeListener seekBarChangeListener =
             new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                    // onProgressChanged(seekBar,progress,fromUser);
                     edtEmiLoanAmount.setText(String.valueOf(progress));
+                    isValid();
                 }
 
                 @Override
@@ -184,6 +217,7 @@ public class FragmentEmiCalculator extends Fragment {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                     edtLoanTenure.setText(String.valueOf(progress));
+                    isValid();
                 }
 
                 @Override
@@ -204,6 +238,7 @@ public class FragmentEmiCalculator extends Fragment {
                     float val = (float)progress / 10;
                     String v = String.valueOf(val);
                     edtRateOfInterest.setText(v);
+                    isValid();
                 }
 
                 @Override

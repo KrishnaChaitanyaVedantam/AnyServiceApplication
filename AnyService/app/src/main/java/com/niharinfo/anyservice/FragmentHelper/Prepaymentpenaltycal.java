@@ -1,93 +1,73 @@
-package com.niharinfo.anyservice;
+package com.niharinfo.anyservice.FragmentHelper;
 
-import android.hardware.SensorEventListener;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.InputType;
 import android.text.TextWatcher;
-import android.text.method.DigitsKeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import com.niharinfo.anyservice.R;
 
 import com.niharinfo.anyservice.Helper.DecimalDigitsInputFilter;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 /**
- * Created by chaitanya on 27/7/15.
+ * Created by chaitanya on 5/8/15.
  */
-public class FragmentEmiCalculator extends Fragment {
+public class Prepaymentpenaltycal extends Fragment {
 
-    SeekBar seekBar,seekBarPercentage,seekbarTimer;
-    EditText edtEmiLoanAmount,edtRateOfInterest,edtLoanTenure;
+    SeekBar seekBarPPCC,seekBarPercentage;
+    EditText edtEmiLoanAmount,edtRateOfInterest;
     TextView txtEmiAmount;
     String i;
     String r;
     Double principalAmount,rateOfInterest,loanTenure,numerator,denominator,powerValue,emiAmount,originalRoi;
     BigDecimal finalEmiAmount;
 
-    public static FragmentEmiCalculator newInstance(int page, String title) {
-        FragmentEmiCalculator fragmentFirst = new FragmentEmiCalculator();
+    public static Prepaymentpenaltycal newInstance(int page, String title) {
+
+        Prepaymentpenaltycal penalty = new Prepaymentpenaltycal();
         Bundle args = new Bundle();
         args.putInt("someInt", page);
         args.putString("someTitle", title);
-        fragmentFirst.setArguments(args);
-        return fragmentFirst;
+        penalty.setArguments(args);
+        return penalty;
     }
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_emi_calculator,container,false);
-        seekBar = (SeekBar)v.findViewById(R.id.seekBar1);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.prepaymentpenaltychargecalculator,container,false);
+        seekBarPPCC = (SeekBar)v.findViewById(R.id.sB_Depositamount);
         seekBarPercentage = (SeekBar)v.findViewById(R.id.seekBarROI);
-        seekbarTimer = (SeekBar)v.findViewById(R.id.seekBarTimer);
-        seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
+        seekBarPPCC.setOnSeekBarChangeListener(seekBarChangeListener);
         seekBarPercentage.setOnSeekBarChangeListener(seekBarChangeListenerROI);
-        seekbarTimer.setOnSeekBarChangeListener(seekBarChangeListenerMonths);
-        edtRateOfInterest = (EditText)v.findViewById(R.id.edtEmiLoanROI);
-        edtEmiLoanAmount = (EditText)v.findViewById(R.id.edtEmiLoanAmount);
-        edtLoanTenure = (EditText)v.findViewById(R.id.edtLoanTenure);
+        edtRateOfInterest = (EditText)v.findViewById(R.id.edtPPCCLoanROI);
+        edtEmiLoanAmount = (EditText)v.findViewById(R.id.edtPPCCDepositAmount);
         txtEmiAmount = (TextView)v.findViewById(R.id.txtEmiAmount);
+        //Calculation
+       /* double amount=1000.0,Rate;
+        int duration1=2;
+        Rate = (2.0/12.0)/100;
+        double powerVal = Math.pow((1+Rate),duration1);
+        double numerator = amount*Rate*powerVal;
+        double denom = powerVal-1;
+        double total =  numerator/denom;
+        double t = total;
+        BigDecimal b = new BigDecimal(t).setScale(2,BigDecimal.ROUND_HALF_UP);*/
 
         edtRateOfInterest.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(3,1)});
-        edtLoanTenure.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                edtLoanTenure.setSelection(count);
-                if(count==0){
-                    i="0";
-                }else{
-                    i = s.toString();
-                }
-                int amt = Integer.parseInt(i);
-                if(amt>360){
-                    seekbarTimer.setProgress(360);
-                    edtLoanTenure.setText("360");
-                }else{
-                    seekbarTimer.setProgress(Integer.parseInt(i));
-                }
-                //isValid();
-            }
 
-            @Override
-            public void afterTextChanged(Editable s) {
 
-            }
-        });
         edtRateOfInterest.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,7 +107,7 @@ public class FragmentEmiCalculator extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-               // seekBar.setProgress(Integer.parseInt(s.toString()));
+                // seekBar.setProgress(Integer.parseInt(s.toString()));
                 edtEmiLoanAmount.setSelection(count);
                 if(count==0){
                     i="0";
@@ -135,11 +115,11 @@ public class FragmentEmiCalculator extends Fragment {
                     i = s.toString();
                 }
                 int amt = Integer.parseInt(i);
-                if(amt>2000000){
-                    seekBar.setProgress(2000000);
-                    edtEmiLoanAmount.setText("2000000");
+                if(amt>5000000){
+                    seekBarPPCC.setProgress(5000000);
+                    edtEmiLoanAmount.setText("5000000");
                 }else{
-                    seekBar.setProgress(Integer.parseInt(i));
+                    seekBarPPCC.setProgress(Integer.parseInt(i));
                 }
                 //isValid();
             }
@@ -155,16 +135,21 @@ public class FragmentEmiCalculator extends Fragment {
 
     private boolean isValid(){
 
-        if(edtEmiLoanAmount.getText().toString().equalsIgnoreCase("0")||edtLoanTenure.getText().toString().equalsIgnoreCase("0")||edtRateOfInterest.getText().toString().equalsIgnoreCase("0.0")||edtEmiLoanAmount.getText().toString().equalsIgnoreCase("")||edtRateOfInterest.getText().toString().equalsIgnoreCase("")||edtLoanTenure.getText().toString().equalsIgnoreCase("")){
+        if(edtEmiLoanAmount.getText().toString().equalsIgnoreCase("0")||edtRateOfInterest.getText().toString().equalsIgnoreCase("0.0")||edtEmiLoanAmount.getText().toString().equalsIgnoreCase("")||edtRateOfInterest.getText().toString().equalsIgnoreCase("")){
             //return false;
         }else{
+            /*  var $i = ($duration/400);
+        var $n =($duration1/3);
+        var $total1 = '0.00';
+
+         $total = ($amount*(Math.pow(1+$i,$n)-1))/(1-(1/Math.pow(1+$i,1.0/3.0)));
+         M = ( R * [(1+r)n - 1 ] ) / (1-(1+r)-1/3) */
+            /*         $total = (($amount * $duration)/100);*/
+
             principalAmount = Double.parseDouble(edtEmiLoanAmount.getText().toString());
             rateOfInterest = Double.parseDouble(edtRateOfInterest.getText().toString());
-            loanTenure = Double.parseDouble(edtLoanTenure.getText().toString());
-            originalRoi = (rateOfInterest/12.0)/100;
-            powerValue = Math.pow((1+originalRoi),loanTenure);
-            numerator = principalAmount*originalRoi*powerValue;
-            denominator = powerValue-1;
+            numerator=principalAmount*rateOfInterest;
+            denominator=100.00;
             emiAmount =  numerator/denominator;
             double t = emiAmount;
             if(Double.isNaN(t)){
@@ -185,7 +170,7 @@ public class FragmentEmiCalculator extends Fragment {
             new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                   // onProgressChanged(seekBar,progress,fromUser);
+                    // onProgressChanged(seekBar,progress,fromUser);
                     edtEmiLoanAmount.setText(String.valueOf(progress));
                     isValid();
                 }
@@ -206,7 +191,6 @@ public class FragmentEmiCalculator extends Fragment {
 
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    edtLoanTenure.setText(String.valueOf(progress));
                     isValid();
                 }
 
@@ -241,4 +225,7 @@ public class FragmentEmiCalculator extends Fragment {
 
                 }
             };
+
+
+
 }

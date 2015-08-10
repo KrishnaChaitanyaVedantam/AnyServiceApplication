@@ -8,13 +8,13 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/txtLoanAmoutEmi"
+            android:id="@+id/txtLoanEmi"
             android:layout_alignParentLeft="true"
-            android:text="@string/loan_amount"
+            android:text="@string/emi"
             style="@style/txtEmiHeader" />
 
         <EditText
-            android:id="@+id/edtEmiLoanAmount"
+            android:id="@+id/edtLoanAmount"
             android:hint="amount"
             android:inputType="number"
             android:maxLength="7"
@@ -23,326 +23,319 @@
             style="@style/edtLoanAmount" />
 
         <TextView
-            android:id="@+id/txtRupee"
-            android:layout_toLeftOf="@id/edtEmiLoanAmount"
+            android:id="@+id/txtLoanRupee"
+            android:layout_toLeftOf="@id/edtLoanAmount"
             android:text="₹"
             style="@style/txtRupee" />
 
 
         <SeekBar
-            android:id="@+id/seekBar1"
+            android:id="@+id/seekBarLoan1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtRupee"
-            android:max="2000000"
+            android:layout_below="@id/txtLoanRupee"
+            android:max="500000"
             style="@style/CustomSeekBar2" />
 
         <ImageView
-            android:id="@+id/imgLineFirstEmi"
+            android:id="@+id/imgLineFirstLoan"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="17dp" />
 
         <TextView
-            android:id="@+id/txtEmiFirstRange"
-            android:layout_below="@id/imgLineFirstEmi"
+            android:id="@+id/txtLoanFirstRange"
+            android:layout_below="@id/imgLineFirstLoan"
             android:text="0.0L"
             style="@style/txtEFirst" />
 
 
         <ImageView
-            android:id="@+id/imgLineSecondEmi"
+            android:id="@+id/imgLineSecondLoan"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
-            android:layout_marginLeft="110dp" />
+            android:layout_marginLeft="105dp" />
 
         <TextView
-            android:id="@+id/txtEmiSecondRange"
+            android:id="@+id/txtLoanSecondRange"
             android:layout_marginLeft="40dp"
-            android:layout_below="@id/imgLineSecondEmi"
-            android:text="5.25L"
+            android:layout_below="@id/imgLineSecondLoan"
+            android:text="1.25L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiFirstRange" />
+            android:layout_toRightOf="@id/txtLoanFirstRange" />
 
         <ImageView
-            android:id="@+id/imgLineThirdEmi"
+            android:id="@+id/imgLineThirdLoan"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
-            android:layout_marginLeft="200dp" />
+            android:layout_marginLeft="180dp" />
 
         <TextView
-            android:id="@+id/txtEmiThirdRange"
-            android:layout_marginLeft="27dp"
-            android:layout_below="@id/imgLineSecondEmi"
-            android:text="10.25L"
+            android:id="@+id/txtLoanThirdRange"
+            android:layout_marginLeft="23dp"
+            android:layout_below="@id/imgLineSecondLoan"
+            android:text="2.50L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiSecondRange" />
+            android:layout_toRightOf="@id/txtLoanSecondRange" />
 
         <ImageView
-            android:id="@+id/imgLineFourthEmi"
+            android:id="@+id/imgLineFourthLoan"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
-            android:layout_marginLeft="270dp" />
+            android:layout_marginLeft="251dp" />
 
         <TextView
-            android:id="@+id/txtEmiFourthRange"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/imgLineSecondEmi"
-            android:text="15.25L"
+            android:id="@+id/txtLoanFourthRange"
+            android:layout_marginLeft="18dp"
+            android:layout_below="@id/imgLineSecondLoan"
+            android:text="3.75L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiThirdRange" />
+            android:layout_toRightOf="@id/txtLoanThirdRange" />
 
         <ImageView
-            android:id="@+id/imgLineFifthEmi"
+            android:id="@+id/imgLineFifthLoan"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="340dp" />
 
         <TextView
-            android:id="@+id/txtEmiFifthRange"
-            android:layout_marginLeft="5dp"
-            android:layout_below="@id/imgLineSecondEmi"
-            android:text="20.00L"
+            android:id="@+id/txtLoanFifthRange"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/imgLineSecondLoan"
+            android:text="5.0L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiFourthRange" />
+            android:layout_toRightOf="@id/txtLoanFourthRange" />
 
         <TextView
-            android:id="@+id/txtLoanEmiROI"
+            android:id="@+id/txtLoanlROI"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/txtEmiFifthRange"
+            android:layout_below="@id/txtLoanFifthRange"
             android:text="@string/rate_interest"
             style="@style/txtEmiHeader" />
 
         <EditText
-            android:id="@+id/edtEmiLoanROI"
+            android:id="@+id/edtLoanlROI"
             android:hint="amount"
             android:inputType="number|numberDecimal"
             android:maxLength="7"
             android:gravity="center"
-            android:layout_below="@id/txtEmiFifthRange"
+            android:layout_below="@id/txtLoanFifthRange"
             style="@style/edtLoanAmount" />
 
         <TextView
-            android:id="@+id/txtPercentage"
-            android:layout_toLeftOf="@id/edtEmiLoanROI"
+            android:id="@+id/txtLoanPercentage"
+            android:layout_toLeftOf="@id/edtLoanlROI"
             android:text="%"
-            android:layout_below="@id/txtEmiFifthRange"
+            android:layout_below="@id/txtLoanFifthRange"
             style="@style/txtRupee" />
 
 
         <SeekBar
-            android:id="@+id/seekBarROI"
+            android:id="@+id/seekBarLoanROI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtPercentage"
+            android:layout_below="@id/txtLoanPercentage"
             android:max="200"
             style="@style/CustomSeekBar2" />
 
         <ImageView
-            android:id="@+id/imgLineFirstROI"
+            android:id="@+id/imgLineLoanFirstROI"
             style="@style/imgLine"
             android:layout_marginTop="207dp"
             android:layout_marginLeft="17dp" />
 
         <TextView
-            android:id="@+id/txtROIFirstRange"
-            android:layout_below="@id/imgLineFirstROI"
+            android:id="@+id/txtLoanROIFirstRange"
+            android:layout_below="@id/imgLineLoanFirstROI"
             android:text="0.0%"
             style="@style/txtEFirst" />
 
 
         <ImageView
-            android:id="@+id/imgLineSecondROI"
+            android:id="@+id/imgLineLoanSecondROI"
             style="@style/imgLine"
             android:layout_marginTop="207dp"
             android:layout_marginLeft="110dp" />
 
         <TextView
-            android:id="@+id/txtROISecondRange"
+            android:id="@+id/txtLoanROISecondRange"
             android:layout_marginLeft="40dp"
-            android:layout_below="@id/imgLineSecondROI"
+            android:layout_below="@id/imgLineLoanSecondROI"
             android:text="5.0%"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROIFirstRange" />
+            android:layout_toRightOf="@id/txtLoanROIFirstRange" />
 
         <ImageView
-            android:id="@+id/imgLineThirdROI"
+            android:id="@+id/imgLoanLineThirdROI"
             style="@style/imgLine"
             android:layout_marginTop="207dp"
             android:layout_marginLeft="180dp" />
 
         <TextView
-            android:id="@+id/txtROIThirdRange"
+            android:id="@+id/txtLoanROIThirdRange"
             android:layout_marginLeft="27dp"
-            android:layout_below="@id/imgLineSecondROI"
+            android:layout_below="@id/imgLineLoanSecondROI"
             android:text="10.0%"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROISecondRange" />
+            android:layout_toRightOf="@id/txtLoanROISecondRange" />
 
         <ImageView
-            android:id="@+id/imgLineFourthROI"
+            android:id="@+id/imgLineLoanFourthROI"
             style="@style/imgLine"
             android:layout_marginTop="207dp"
             android:layout_marginLeft="255dp" />
 
         <TextView
-            android:id="@+id/txtROIFourthRange"
+            android:id="@+id/txtLoanROIFourthRange"
             android:layout_marginLeft="15dp"
-            android:layout_below="@id/imgLineSecondROI"
+            android:layout_below="@id/imgLineLoanSecondROI"
             android:text="15.0%"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROIThirdRange" />
+            android:layout_toRightOf="@id/txtLoanROIThirdRange" />
 
         <ImageView
-            android:id="@+id/imgLineFifthROI"
+            android:id="@+id/imgLoanLineFifthROI"
             style="@style/imgLine"
             android:layout_marginTop="207dp"
             android:layout_marginLeft="340dp" />
 
         <TextView
-            android:id="@+id/txtROIFifthRange"
-            android:layout_marginLeft="5dp"
-            android:layout_below="@id/imgLineSecondROI"
+            android:id="@+id/txtLoanROIFifthRange"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/imgLineLoanSecondROI"
             android:text="20.0%"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiFourthRange" />
+            android:layout_toRightOf="@id/txtLoanROIFourthRange" />
 
         <!--LoanTenure:In Months-->
 
         <TextView
-            android:id="@+id/txtLoanTenure"
+            android:id="@+id/txtLoanlTenure"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/txtROIFifthRange"
+            android:layout_below="@id/txtLoanROIFifthRange"
             android:text="Loan Tenure(In Months)"
             style="@style/txtEmiHeader" />
 
         <EditText
-            android:id="@+id/edtLoanTenure"
+            android:id="@+id/edtLoanlTenure"
             android:hint="time"
             android:inputType="number|numberDecimal"
             android:maxLength="7"
             android:gravity="center"
-            android:layout_below="@id/txtROIFifthRange"
+            android:layout_below="@id/txtLoanROIFifthRange"
             style="@style/edtLoanAmount" />
 
         <TextView
-            android:id="@+id/txtCalender"
-            android:layout_toLeftOf="@id/edtLoanTenure"
+            android:id="@+id/txtLoanCalender"
+            android:layout_toLeftOf="@id/edtLoanlTenure"
             android:drawableLeft="@android:drawable/ic_menu_my_calendar"
-            android:layout_below="@id/txtROIFifthRange"
+            android:layout_below="@id/txtLoanROIFifthRange"
             style="@style/txtRupee" />
 
 
         <SeekBar
-            android:id="@+id/seekBarTimer"
+            android:id="@+id/seekBarLoanTimer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edtLoanTenure"
-            android:max="360"
+            android:layout_below="@id/edtLoanlTenure"
+            android:max="300"
             style="@style/CustomSeekBar2" />
 
         <ImageView
-            android:id="@+id/imgLineFirstTimer"
+            android:id="@+id/imgLoanLineFirstTimer"
             style="@style/imgLine"
             android:layout_marginTop="336dp"
             android:layout_marginLeft="17dp" />
 
         <TextView
-            android:id="@+id/txtROIFirstTimer"
-            android:layout_below="@id/imgLineFirstTimer"
+            android:id="@+id/txtLoanROIFirstTimer"
+            android:layout_below="@id/imgLoanLineFirstTimer"
             android:text="0"
             style="@style/txtEFirst" />
 
 
         <ImageView
-            android:id="@+id/imgLineSecondTimer"
+            android:id="@+id/imgLoanLineSecondTimer"
             style="@style/imgLine"
             android:layout_marginTop="336dp"
-            android:layout_marginLeft="80dp" />
+            android:layout_marginLeft="105dp" />
 
         <TextView
-            android:id="@+id/txtROISecondTimer"
-            android:layout_marginLeft="42dp"
-            android:layout_below="@id/imgLineSecondTimer"
-            android:text="60"
+            android:id="@+id/txtLoanROISecondTimer"
+            android:layout_marginLeft="68dp"
+            android:layout_below="@id/imgLoanLineSecondTimer"
+            android:text="75"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROIFirstTimer" />
+            android:layout_toRightOf="@id/txtLoanROIFirstTimer" />
 
         <ImageView
-            android:id="@+id/imgLineThirdTimer"
+            android:id="@+id/imgLoanLineThirdTimer"
             style="@style/imgLine"
             android:layout_marginTop="336dp"
-            android:layout_marginLeft="155dp" />
+            android:layout_marginLeft="178dp" />
 
         <TextView
-            android:id="@+id/txtROIThirdTimer"
+            android:id="@+id/txtLoanROIThirdTimer"
             android:layout_marginLeft="40dp"
-            android:layout_below="@id/imgLineSecondTimer"
+            android:layout_below="@id/imgLoanLineSecondTimer"
             android:text="150"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROISecondTimer" />
+            android:layout_toRightOf="@id/txtLoanROISecondTimer" />
 
         <ImageView
-            android:id="@+id/imgLineFourthTimer"
+            android:id="@+id/imgLoanLineFourthTimer"
             style="@style/imgLine"
             android:layout_marginTop="336dp"
-            android:layout_marginLeft="230dp" />
+            android:layout_marginLeft="253dp" />
 
         <TextView
-            android:id="@+id/txtROIFourthTimer"
+            android:id="@+id/txtLoanROIFourthTimer"
             android:layout_marginLeft="40dp"
-            android:layout_below="@id/imgLineSecondTimer"
-            android:text="240"
+            android:layout_below="@id/imgLoanLineSecondTimer"
+            android:text="225"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROIThirdTimer" />
+            android:layout_toRightOf="@id/txtLoanROIThirdTimer" />
 
         <ImageView
-            android:id="@+id/imgLineFifthTimer"
+            android:id="@+id/imgLoanLineFifthTimer"
             style="@style/imgLine"
             android:layout_marginTop="336dp"
             android:layout_marginLeft="340dp" />
 
         <TextView
-            android:id="@+id/txtROIFifthTimer"
-            android:layout_marginLeft="60dp"
-            android:layout_below="@id/imgLineSecondTimer"
-            android:text="360"
+            android:id="@+id/txtLoanROIFifthTimer"
+            android:layout_marginLeft="40dp"
+            android:layout_below="@id/imgLoanLineSecondTimer"
+            android:text="300"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtROIFourthTimer" />
+            android:layout_toRightOf="@id/txtLoanROIFourthTimer" />
 
 
         <LinearLayout
-            android:id="@+id/lnrEmiCalculation"
+            android:id="@+id/lnrLoanEmiCalculation"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_below="@id/txtROIFifthTimer"
+            android:layout_below="@id/txtLoanROIFifthTimer"
             android:layout_margin="10dp"
             android:layout_height="wrap_content"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/txtMonthlyEmi"
+                android:id="@+id/txtLoanMonthlyEmi"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Monthly EMI"
                 style="@style/txtMonthlyEmi" />
 
             <TextView
-                android:id="@+id/txtEmiAmount"
+                android:id="@+id/txtLoanEmiAmount"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
                 style="@style/edtTotalAmount" />
 
-
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnGetQuotes"
-            style="@style/btnQuotes"
-            android:layout_below="@id/lnrEmiCalculation"
-            />
 
     </RelativeLayout>
 </ScrollView>

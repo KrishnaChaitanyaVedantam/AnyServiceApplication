@@ -4,4 +4,9 @@
         <attr name="floatMax" format="float" />
         <attr name="floatMin" format="float" />
     </declare-styleable>
+
+        <declare-styleable name="NiceSpinner">
+            <attr name="arrowTint" format="color" />
+        </declare-styleable>
+
 </resources>

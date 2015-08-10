@@ -4,12 +4,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.niharinfo.anyservice.FragmentHelper.FragmentFixedDepositCalculater;
+import com.niharinfo.anyservice.FragmentHelper.LoanAmountCalculatorFragment;
+import com.niharinfo.anyservice.FragmentHelper.Prepaymentpenaltycal;
+import com.niharinfo.anyservice.FragmentHelper.RecurringDepositCalculator;
+
 /**
  * Created by chaitanya on 20/7/15.
  */
 public class MyPagerAdapter extends FragmentPagerAdapter {
 
-    private final String[] TITLES = {"Emi Calculator","Home Loan","Personal Loan","Top Paid","Top Free","Top Grossing",};
+    private final String[] TITLES = {"Emi Calculator","Loan Amount Calculator","Fixed Deposit Calculator","Recurring Deposit Calculator","Prepayment Penalty Charge Calculator"};
 
     public MyPagerAdapter(FragmentManager fm){
         super(fm);
@@ -32,13 +37,13 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return FragmentEmiCalculator.newInstance(0, "Emi Calculator");
             case 1:
-                return HomeFragment.newInstance(1,"Home Loan");
+                return LoanAmountCalculatorFragment.newInstance(1, "Loan Amount Calculator");
             case 2:
-                return FragmentPersonalLoan.newInstance(position,"Personal Loan");
+                return FragmentFixedDepositCalculater.newInstance(position, "Fixed Deposit Calculator");
             case 3:
-                return HomeFragment.newInstance(position,"Home Loan");
+                return RecurringDepositCalculator.newInstance(position, "Recurring Deposit Calculator");
             case 4:
-                return HomeFragment.newInstance(position,"Home Loan");
+                return Prepaymentpenaltycal.newInstance(position, "Prepayment Penalty Charge Calculator");
             case 5:
                 return HomeFragment.newInstance(position,"Home Loan");
         }

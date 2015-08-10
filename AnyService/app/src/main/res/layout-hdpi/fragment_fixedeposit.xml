@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtFDDepositAmount"
+            android:layout_alignParentLeft="true"
+            android:text="@string/Deposit_Amount"
+            style="@style/txtEmiHeader"/>
+        <EditText
+            android:id="@+id/edtFDDepositAmount"
+            android:hint="amount"
+            android:inputType="number"
+            android:maxLength="7"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            style="@style/edtLoanAmount"
+            />
+        <TextView
+            android:id="@+id/txtFDRupee"
+            android:layout_toLeftOf="@id/edtFDDepositAmount"
+            android:text="₹"
+            style="@style/txtRupee"
+            />
+        <SeekBar
+            android:id="@+id/sB_Depositamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFDRupee"
+            android:max="5000000"
+            style="@style/CustomSeekBar2"
+            />
+        <ImageView
+            android:id="@+id/imgFDdepositLineFirst"
+            style="@style/imgLine"
+            android:layout_marginTop="78dp"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:id="@+id/txtFDdepositFirstRange"
+            android:layout_below="@id/imgFDdepositLineFirst"
+            android:text="0.0L"
+            style="@style/txtEFirst"
+            />
+        <ImageView
+            android:id="@+id/imgFDdepositeLineSecond"
+            style="@style/imgLine"
+            android:layout_marginTop="78dp"
+            android:layout_marginLeft="85dp"/>
+        <TextView
+            android:id="@+id/txtFDdepositeSecondRange"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/imgFDdepositeLineSecond"
+            android:text="10.0L"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtFDdepositFirstRange"
+            />
+        <ImageView
+            android:id="@+id/imgFDdepositeLineThird"
+            style="@style/imgLine"
+            android:layout_marginTop="78dp"
+            android:layout_marginLeft="140dp"/>
+        <TextView
+            android:id="@+id/txtFDdepositeThirdRange"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/imgFDdepositeLineThird"
+            android:text="20.25L"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtFDdepositeSecondRange"
+            />
+        <ImageView
+            android:id="@+id/imgFDdepositeFourth"
+            style="@style/imgLine"
+            android:layout_marginTop="78dp"
+            android:layout_marginLeft="190dp"/>
+        <TextView
+            android:id="@+id/txtFDdepositeFourthRange"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/imgFDdepositeFourth"
+            android:text="30.25L"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtFDdepositeThirdRange"
+            />
+        <ImageView
+            android:id="@+id/imgFDdepositeFourthOne"
+            style="@style/imgLine"
+            android:layout_marginTop="78dp"
+            android:layout_marginLeft="240dp"/>
+        <TextView
+            android:id="@+id/txtFDdepositeFourthRangeOne"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/imgFDdepositeFourthOne"
+            android:text="40.25L"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtFDdepositeFourthRange"
+            />
+        <ImageView
+            android:id="@+id/imgFDdepositeLineFifth"
+            style="@style/imgLine"
+            android:layout_marginTop="78dp"
+            android:layout_marginLeft="300dp"/>
+
+        <TextView
+            android:id="@+id/txtFDdepositeFifthRange"
+            android:layout_marginLeft="2dp"
+            android:layout_below="@id/imgFDdepositeLineFifth"
+            android:text="50.00L"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtFDdepositeFourthRangeOne"
+            />
+        <!-- Rate of Interest-->
+        <TextView
+            android:id="@+id/txtLoanFDROI"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/txtFDdepositeFifthRange"
+            android:text="@string/rate_interest"
+            style="@style/txtEmiHeader"/>
+        <EditText
+            android:id="@+id/edtFDLoanROI"
+            android:hint="amount"
+            android:inputType="number"
+            android:maxLength="7"
+            android:gravity="center"
+            android:layout_below="@id/txtFDdepositeFifthRange"
+            style="@style/edtLoanAmount"
+            />
+        <TextView
+            android:id="@+id/txtFDPercentage"
+            android:layout_toLeftOf="@id/edtFDLoanROI"
+            android:text="%"
+            android:layout_below="@id/txtFDdepositeFifthRange"
+            style="@style/txtRupee"
+            />
+        <SeekBar
+            android:id="@+id/seekBarROI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFDPercentage"
+            android:max="200"
+            style="@style/CustomSeekBar2"
+            />
+
+        <ImageView
+            android:id="@+id/imgLineFirstROI"
+            style="@style/imgLine"
+            android:layout_marginTop="206dp"
+            android:layout_marginLeft="17dp"/>
+
+        <TextView
+            android:id="@+id/txtROIFirstRange"
+            android:layout_below="@id/imgLineFirstROI"
+            android:text="0.0%"
+            style="@style/txtEFirst"
+            />
+
+
+        <ImageView
+            android:id="@+id/imgLineSecondROI"
+            style="@style/imgLine"
+            android:layout_marginTop="206dp"
+            android:layout_marginLeft="100dp"/>
+
+        <TextView
+            android:id="@+id/txtROISecondRange"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/imgLineSecondROI"
+            android:text="5.0%"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtROIFirstRange"
+            />
+
+        <ImageView
+            android:id="@+id/imgLineThirdROI"
+            style="@style/imgLine"
+            android:layout_marginTop="206dp"
+            android:layout_marginLeft="160dp"/>
+
+        <TextView
+            android:id="@+id/txtROIThirdRange"
+            android:layout_marginLeft="17dp"
+            android:layout_below="@id/imgLineSecondROI"
+            android:text="10.0%"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtROISecondRange"
+            />
+
+        <ImageView
+            android:id="@+id/imgLineFourthROI"
+            style="@style/imgLine"
+            android:layout_marginTop="206dp"
+            android:layout_marginLeft="240dp"/>
+
+        <TextView
+            android:id="@+id/txtROIFourthRange"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/imgLineSecondROI"
+            android:text="15.0%"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtROIThirdRange"
+            />
+
+        <ImageView
+            android:id="@+id/imgLineFifthROI"
+            style="@style/imgLine"
+            android:layout_marginTop="206dp"
+            android:layout_marginLeft="300dp"/>
+
+        <TextView
+            android:id="@+id/txtROIFifthRange"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/imgLineFifthROI"
+            android:text="20.0%"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtROIFourthRange"
+            />
+        <!--Deposit Tenure (in Years)-->
+        <TextView
+            android:id="@+id/txtdepoitetenure"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/txtROIFifthRange"
+            android:text="@string/deposite_tenure"
+            style="@style/txtEmiHeader"/>
+        <EditText
+            android:id="@+id/edtFDdepositetenure"
+            android:hint="amount"
+            android:inputType="number"
+            android:maxLength="7"
+            android:gravity="center"
+            android:layout_below="@id/txtROIFifthRange"
+            style="@style/edtLoanAmount"
+            />
+        <TextView
+            android:id="@+id/txtFDtenuerePercentage"
+            android:layout_toLeftOf="@id/edtFDdepositetenure"
+            android:layout_below="@id/txtROIFifthRange"
+            android:text=" "
+            style="@style/txtRupee"
+            />
+        <SeekBar
+            android:id="@+id/seekBarDTIY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFDtenuerePercentage"
+            android:max="10"
+            style="@style/CustomSeekBar2"
+            />
+        <!-- ImageDesigns-->
+        <ImageView
+            android:id="@+id/imgLineFirstTimer"
+            style="@style/imgLine"
+            android:layout_marginTop="334dp"
+            android:layout_marginLeft="17dp" />
+
+        <TextView
+            android:id="@+id/txtDTIYFirstTimer"
+            android:layout_below="@id/imgLineFirstTimer"
+            android:text="0"
+            style="@style/txtEFirst"/>
+
+
+        <ImageView
+            android:id="@+id/imgLineSecondTimer"
+            style="@style/imgLine"
+            android:layout_marginTop="334dp"
+            android:layout_marginLeft="75dp" />
+
+        <TextView
+            android:id="@+id/txtDTIYSecondTimer"
+            android:layout_marginLeft="42dp"
+            android:layout_below="@id/imgLineSecondTimer"
+            android:text="2"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtDTIYFirstTimer" />
+
+        <ImageView
+            android:id="@+id/imgLineThirdTimer"
+            style="@style/imgLine"
+            android:layout_marginTop="334dp"
+            android:layout_marginLeft="130dp" />
+
+        <TextView
+            android:id="@+id/txtDTIYThirdTimer"
+            android:layout_marginLeft="50dp"
+            android:layout_below="@id/imgLineSecondTimer"
+            android:text="4"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtDTIYSecondTimer" />
+
+        <ImageView
+            android:id="@+id/imgLineFourthTimer"
+            style="@style/imgLine"
+            android:layout_marginTop="334dp"
+            android:layout_marginLeft="180dp" />
+
+        <TextView
+            android:id="@+id/txtDTIYFourthTimer"
+            android:layout_marginLeft="45dp"
+            android:layout_below="@id/imgLineSecondTimer"
+            android:text="6"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtDTIYThirdTimer" />
+
+        <ImageView
+            android:id="@+id/imgLineFourthTimerOne"
+            style="@style/imgLine"
+            android:layout_marginTop="334dp"
+            android:layout_marginLeft="240dp" />
+
+        <TextView
+            android:id="@+id/txtDTIYFourthTimerOne"
+            android:layout_marginLeft="45dp"
+            android:layout_below="@id/imgLineSecondTimer"
+            android:text="8"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtDTIYFourthTimer" />
+        <ImageView
+            android:id="@+id/imgLineFifthTimer"
+            style="@style/imgLine"
+            android:layout_marginTop="334dp"
+            android:layout_marginLeft="300dp" />
+
+        <TextView
+            android:id="@+id/txtDTIYFifthTimer"
+            android:layout_marginLeft="90dp"
+            android:layout_below="@id/imgLineSecondTimer"
+            android:text="10"
+            style="@style/txtFD"
+            android:layout_toRightOf="@id/txtDTIYFourthTimer" />
+
+
+        <LinearLayout
+            android:id="@+id/lnrEmiCalculation"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_below="@id/txtDTIYFifthTimer"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtMonthlyFD"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Maturity Amount"
+                style="@style/txtMonthlyEmi" />
+
+            <TextView
+                android:id="@+id/txtEmiAmount"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                style="@style/edtTotalAmount" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFDGetQuotes"
+            style="@style/btnQuotes"
+            android:layout_below="@id/lnrEmiCalculation" />
+
+    </RelativeLayout>
+</ScrollView>

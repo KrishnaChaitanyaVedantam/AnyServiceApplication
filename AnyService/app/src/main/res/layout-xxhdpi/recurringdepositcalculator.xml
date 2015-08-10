@@ -8,13 +8,13 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/txtLoanAmoutEmi"
+            android:id="@+id/txtLoanAmoutRDC"
             android:layout_alignParentLeft="true"
-            android:text="@string/loan_amount"
+            android:text="@string/DepositMonthlyAmount"
             style="@style/txtEmiHeader" />
 
         <EditText
-            android:id="@+id/edtEmiLoanAmount"
+            android:id="@+id/edtRDCLoanAmount"
             android:hint="amount"
             android:inputType="number"
             android:maxLength="7"
@@ -24,7 +24,7 @@
 
         <TextView
             android:id="@+id/txtRupee"
-            android:layout_toLeftOf="@id/edtEmiLoanAmount"
+            android:layout_toLeftOf="@id/edtRDCLoanAmount"
             android:text="₹"
             style="@style/txtRupee" />
 
@@ -38,95 +38,95 @@
             style="@style/CustomSeekBar2" />
 
         <ImageView
-            android:id="@+id/imgLineFirstEmi"
+            android:id="@+id/imgLineFirstRDC"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="17dp" />
 
         <TextView
-            android:id="@+id/txtEmiFirstRange"
-            android:layout_below="@id/imgLineFirstEmi"
+            android:id="@+id/txtRDCFirstRange"
+            android:layout_below="@id/imgLineFirstRDC"
             android:text="0.0L"
             style="@style/txtEFirst" />
 
 
         <ImageView
-            android:id="@+id/imgLineSecondEmi"
+            android:id="@+id/imgLineSecondRDC"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="110dp" />
 
         <TextView
-            android:id="@+id/txtEmiSecondRange"
+            android:id="@+id/txtRDCSecondRange"
             android:layout_marginLeft="40dp"
-            android:layout_below="@id/imgLineSecondEmi"
+            android:layout_below="@id/imgLineSecondRDC"
             android:text="5.25L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiFirstRange" />
+            android:layout_toRightOf="@id/txtRDCFirstRange" />
 
         <ImageView
-            android:id="@+id/imgLineThirdEmi"
+            android:id="@+id/imgLineThirdRDC"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="200dp" />
 
         <TextView
-            android:id="@+id/txtEmiThirdRange"
+            android:id="@+id/txtRDCThirdRange"
             android:layout_marginLeft="27dp"
-            android:layout_below="@id/imgLineSecondEmi"
+            android:layout_below="@id/imgLineSecondRDC"
             android:text="10.25L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiSecondRange" />
+            android:layout_toRightOf="@id/txtRDCSecondRange" />
 
         <ImageView
-            android:id="@+id/imgLineFourthEmi"
+            android:id="@+id/imgLineFourthRDC"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="270dp" />
 
         <TextView
-            android:id="@+id/txtEmiFourthRange"
+            android:id="@+id/txtRDCFourthRange"
             android:layout_marginLeft="10dp"
-            android:layout_below="@id/imgLineSecondEmi"
+            android:layout_below="@id/imgLineSecondRDC"
             android:text="15.25L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiThirdRange" />
+            android:layout_toRightOf="@id/txtRDCThirdRange" />
 
         <ImageView
-            android:id="@+id/imgLineFifthEmi"
+            android:id="@+id/imgLineFifthRDC"
             style="@style/imgLine"
             android:layout_marginTop="78dp"
             android:layout_marginLeft="340dp" />
 
         <TextView
-            android:id="@+id/txtEmiFifthRange"
+            android:id="@+id/txtRDCFifthRange"
             android:layout_marginLeft="5dp"
-            android:layout_below="@id/imgLineSecondEmi"
+            android:layout_below="@id/imgLineSecondRDC"
             android:text="20.00L"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiFourthRange" />
+            android:layout_toRightOf="@id/txtRDCFourthRange" />
 
         <TextView
-            android:id="@+id/txtLoanEmiROI"
+            android:id="@+id/txtLoanRDCROI"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/txtEmiFifthRange"
+            android:layout_below="@id/txtRDCFifthRange"
             android:text="@string/rate_interest"
             style="@style/txtEmiHeader" />
 
         <EditText
-            android:id="@+id/edtEmiLoanROI"
+            android:id="@+id/edtRDCLoanROI"
             android:hint="amount"
             android:inputType="number|numberDecimal"
             android:maxLength="7"
             android:gravity="center"
-            android:layout_below="@id/txtEmiFifthRange"
+            android:layout_below="@id/txtRDCFifthRange"
             style="@style/edtLoanAmount" />
 
         <TextView
             android:id="@+id/txtPercentage"
-            android:layout_toLeftOf="@id/edtEmiLoanROI"
+            android:layout_toLeftOf="@id/edtRDCLoanROI"
             android:text="%"
-            android:layout_below="@id/txtEmiFifthRange"
+            android:layout_below="@id/txtRDCFifthRange"
             style="@style/txtRupee" />
 
 
@@ -205,7 +205,7 @@
             android:layout_below="@id/imgLineSecondROI"
             android:text="20.0%"
             style="@style/txtEmi"
-            android:layout_toRightOf="@id/txtEmiFourthRange" />
+            android:layout_toRightOf="@id/txtRDCFourthRange" />
 
         <!--LoanTenure:In Months-->
 
@@ -213,7 +213,7 @@
             android:id="@+id/txtLoanTenure"
             android:layout_alignParentLeft="true"
             android:layout_below="@id/txtROIFifthRange"
-            android:text="Loan Tenure(In Months)"
+            android:text="Deposit Tenure"
             style="@style/txtEmiHeader" />
 
         <EditText

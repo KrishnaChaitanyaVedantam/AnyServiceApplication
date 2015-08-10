@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtLoanAmoutEmi"
+        android:layout_alignParentLeft="true"
+        android:text="@string/loan_amount"
+        style="@style/txtEmiHeader"/>
+
+    <EditText
+        android:id="@+id/edtRDCLoanAmount"
+        android:hint="amount"
+        android:inputType="number"
+        android:maxLength="7"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        style="@style/edtLoanAmount"
+        />
+
+    <TextView
+        android:id="@+id/txtRupee"
+        android:layout_toLeftOf="@id/edtRDCLoanAmount"
+        android:text="₹"
+        style="@style/txtRupee"
+        />
+
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtRupee"
+        android:max="2000000"
+        style="@style/CustomSeekBar2"
+        />
+
+    <ImageView
+        android:id="@+id/imgLineFirstRDC"
+        style="@style/imgLine"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="17dp"/>
+
+    <TextView
+        android:id="@+id/txtRDCFirstRange"
+        android:layout_below="@id/imgLineFirstRDC"
+        android:text="0.0L"
+        style="@style/txtEFirst"
+        />
+
+
+    <ImageView
+        android:id="@+id/imgLineSecondRDC"
+        style="@style/imgLine"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="80dp"/>
+
+    <TextView
+        android:id="@+id/txtRDCSecondRange"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/imgLineSecondRDC"
+        android:text="5.25L"
+        style="@style/txtEmi"
+        android:layout_toRightOf="@id/txtRDCFirstRange"
+        />
+
+    <ImageView
+        android:id="@+id/imgLineThirdRDC"
+        style="@style/imgLine"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="200dp"/>
+
+    <TextView
+        android:id="@+id/txtRDCThirdRange"
+        android:layout_marginLeft="27dp"
+        android:layout_below="@id/imgLineSecondRDC"
+        android:text="10.25L"
+        style="@style/txtEmi"
+        android:layout_toRightOf="@id/txtRDCSecondRange"
+        />
+
+    <ImageView
+        android:id="@+id/imgLineFourthRDC"
+        style="@style/imgLine"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="270dp"/>
+
+    <TextView
+        android:id="@+id/txtRDCFourthRange"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/imgLineSecondRDC"
+        android:text="15.25L"
+        style="@style/txtEmi"
+        android:layout_toRightOf="@id/txtRDCThirdRange"
+        />
+
+    <ImageView
+        android:id="@+id/imgLineFifthRDC"
+        style="@style/imgLine"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="340dp"/>
+
+    <TextView
+        android:id="@+id/txtRDCFifthRange"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/imgLineSecondRDC"
+        android:text="20.00L"
+        style="@style/txtEmi"
+        android:layout_toRightOf="@id/txtRDCFourthRange"
+        />
+
+</RelativeLayout>

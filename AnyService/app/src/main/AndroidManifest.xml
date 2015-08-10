@@ -2,53 +2,86 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.niharinfo.anyservice" >
 
-    <uses-sdk/>
+    <uses-sdk />
 
     <compatible-screens>
+
         <!-- all small size screens -->
-        <screen android:screenSize="small" android:screenDensity="ldpi" />
-        <screen android:screenSize="small" android:screenDensity="mdpi" />
-        <screen android:screenSize="small" android:screenDensity="hdpi" />
-        <screen android:screenSize="small" android:screenDensity="xhdpi" />
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="small" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="small" />
         <!-- all normal size screens -->
-        <screen android:screenSize="normal" android:screenDensity="ldpi" />
-        <screen android:screenSize="normal" android:screenDensity="mdpi" />
-        <screen android:screenSize="normal" android:screenDensity="hdpi" />
-        <screen android:screenSize="normal" android:screenDensity="xhdpi" />
+        <screen
+            android:screenDensity="ldpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="mdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="hdpi"
+            android:screenSize="normal" />
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="normal" />
     </compatible-screens>
-    <uses-permission android:name= "com.niharinfo.anyservice.permission.C2D_MESSAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <permission android:name="com.niharinfo.anyservice.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.niharinfo.anyservice.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <permission
+        android:name="com.niharinfo.anyservice.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme" >
-
-
-
         <activity
             android:name=".ToolsActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
         </activity>
         <activity
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat" >
         </activity>
-        <service android:name="com.niharinfo.anyservice.GCMIntentService"></service>
-        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+
+        <service android:name=".GCMIntentService" />
+
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
                 <category android:name="com.niharinfo.anyservice" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".FragmentHelper.FragmentFixedDepositCalculater"
+            android:label="@string/title_activity_fragment_fixed_deposit_calculater" >
+        </activity>
+        <activity
+            android:name=".HomeLoanPreApprovalActivity"
+            android:label="@string/title_activity_home_loan_pre_approval" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

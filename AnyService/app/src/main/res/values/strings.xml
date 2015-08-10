@@ -29,4 +29,16 @@
     <string name="rate_interest">Rate Of Interest</string>
     <string name="btn_get_quotes">Get Quotes</string>
     <string name="loan_amount">Loan Amount</string>
+    <string name="emi">EMI</string>
+    <string name="Deposit_Amount">Deposit Amount</string>
+    <string name="deposite_tenure">DepositTenure(in Years)</string>
+    <string name="title_activity_fragment_fixed_deposit_calculater">FragmentFixedDepositCalculater
+    </string>
+    <string name="DepositMonthlyAmount">DepositMonthlyAmount</string>
+    <string name="OutstandingLoanAmount">Outstanding Loan Amount</string>
+    <string name="PrepaymentCharge">Prepayment Charge</string>
+    <string name="title_activity_home_loan_pre_approval">HomeLoanPreApprovalActivity</string>
+    <string name="hl_city">House Located City</string>
+    <string name="required_loan_amount">Required Loan Amount</string>
+    <string name="loan_repayment_period">Loan Repayment Period(in years)</string>
 </resources>

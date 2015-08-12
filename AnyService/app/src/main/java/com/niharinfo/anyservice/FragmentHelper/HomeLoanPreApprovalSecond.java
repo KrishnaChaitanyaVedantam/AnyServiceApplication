@@ -20,18 +20,22 @@ public class HomeLoanPreApprovalSecond extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home_loan_pre_approval_second,container,false);
         btnBack = (Button)v.findViewById(R.id.btnBack);
-        /*btnBack.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getFragmentManager().popBackStack(
                         HomeLoanPreApprovalFragment.class.getName(),
                         FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_out, R.anim.slide_right_in).replace(R.id.frmHomeLoanApprovalContainer, new HomeLoanPreApprovalFragment(), "Home Loan Approval").commit();
+                getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_left_in,
+                        R.anim.slide_right_out,R.anim.slide_left_in, R.anim.slide_right_out).replace(
+                        R.id.frmHomeLoanApprovalContainer, new HomeLoanPreApprovalFragment(),
+                        "Home Loan Approval").commit();
             }
-        });*/
+        });
         return v;
     }
 }

@@ -4,6 +4,8 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,10 +29,17 @@ public class HomeLoanPreApprovalFragment extends Fragment implements View.OnClic
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home_loan_approval,container,false);
         niceSpinner = (NiceSpinner)v.findViewById(R.id.spnLoanType);
-        ArrayList<String> dataset = new ArrayList<>(Arrays.asList("--Select--", "Transfer Your Existing Home Loan", "Home/Flat Ready To Move-in", "Home/Flat Under Construction", "Purchase Of House"));
+        ArrayList<String> dataset = new ArrayList<>(Arrays.asList(
+                "--Select--",
+                "Transfer Your Existing Home Loan",
+                "Home/Flat Ready To Move-in",
+                "Home/Flat Under Construction",
+                "Purchase Of House"
+        ));
         niceSpinner.attachDataSource(dataset);
         rel = (RelativeLayout)v.findViewById(R.id.rel);
         btnYes = (Button)v.findViewById(R.id.btnProceedFYes);
@@ -45,7 +54,6 @@ public class HomeLoanPreApprovalFragment extends Fragment implements View.OnClic
         btnProceedf.setOnClickListener(this);
         return v;
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -60,21 +68,17 @@ public class HomeLoanPreApprovalFragment extends Fragment implements View.OnClic
                 niceSpinner.setVisibility(View.GONE);
                 break;
             case R.id.btnProceedF:
-                //FragmentTransaction trans = getFragmentManager().beginTransaction().setCustomAnimations(R.animator.slide_left_in,R.animator.slide_left_out)
-
-                   /* getFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_left,R.anim.slide_right)
-                .remove(getFragmentManager().findFragmentByTag("Home Loan Approval")).addToBackStack(HomeLoanPreApprovalFragment.class.getName()).commit();*/
-                /*getFragmentManager().popBackStack(HomeLoanPreApprovalFragment.class.getName(),
-                        FragmentManager.POP_BACK_STACK_INCLUSIVE);*/
-                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.animator.slide_left_in,
-                        R.anim.slide_left_exit,
-                        R.anim.slide_right_enter,
-                        R.anim.slide_right_exit)
-                .replace(R.id.frmHomeLoanApprovalContainer, new HomeLoanPreApprovalSecond(), "Homeloan PreApproval Second")
-                        .addToBackStack(HomeLoanPreApprovalFragment.class.getName()).commit();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                FragmentHLPreApprovalThird homeLoanPreApprovalFragment = new FragmentHLPreApprovalThird();
+                transaction.setCustomAnimations(R.anim.slide_left_in,R.anim.slide_right_out,
+                        R.anim.slide_left_in,
+                        R.anim.slide_right_out);
+                transaction.replace(R.id.frmHomeLoanApprovalContainer, homeLoanPreApprovalFragment,
+                        "Homeloan PreApproval Second");
+                transaction.commit();
                 break;
             default:
-
                 break;
         }
     }

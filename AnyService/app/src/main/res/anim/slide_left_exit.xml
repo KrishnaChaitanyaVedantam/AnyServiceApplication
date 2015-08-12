@@ -12,4 +12,8 @@
         android:valueType="floatType"
         android:propertyName="alpha"
         android:duration="@android:integer/config_mediumAnimTime" />
+   <!-- <translate android:fromYDelta="0%p" android:toYDelta="100%p"
+        android:duration="2000"/>
+    <alpha android:fromAlpha="1.0" android:toAlpha="0.0"
+        android:duration="2000" />-->
 </set>

@@ -23,70 +23,46 @@
 
         <Button
             android:id="@+id/btnProceedFYes"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
             android:text="Yes"
             android:layout_below="@id/txtQuestion"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
-            android:gravity="center" />
+            style="@style/btnProceedBool"/>
 
         <Button
             android:id="@+id/btnProceedFNo"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/btnProceedBool"
             android:text="No"
+            android:layout_margin="10dp"
             android:layout_below="@id/txtQuestion"
             android:layout_toRightOf="@id/btnProceedFYes"
-            android:layout_margin="10dp"
-            android:textColor="@color/white"
-            android:gravity="center" />
+             />
 
 
         <ImageView
             android:id="@+id/imgLoanType"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="2dp"
-            android:layout_below="@id/btnProceedFYes"
-            android:src="@mipmap/seekbar_thumb" />
+            style="@style/fieldImage"
+            android:layout_below="@id/btnProceedFYes" />
 
         <com.niharinfo.anyservice.Utilities.NiceSpinner
             android:id="@+id/spnLoanType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/niceSpinner"
             android:layout_below="@id/btnProceedFYes"
-            android:layout_toRightOf="@id/imgLoanType"
-            android:background="@drawable/edit_rounded_background"
-            android:layout_margin="10dp"></com.niharinfo.anyservice.Utilities.NiceSpinner>
+            android:layout_toRightOf="@id/imgLoanType"></com.niharinfo.anyservice.Utilities.NiceSpinner>
 
         //HL - House Located
 
         <ImageView
             android:id="@+id/imgHLCity"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
             android:layout_below="@id/spnLoanType"
-            android:src="@mipmap/seekbar_thumb" />
+            style="@style/fieldImage"/>
 
         <EditText
             android:id="@+id/edtHouseLocatedCity"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:hint="@string/hl_city"
-            android:paddingLeft="5dp"
-            android:background="@drawable/edit_rounded_background"
+            style="@style/edtLoanFields"
             android:layout_below="@id/spnLoanType"
             android:layout_toRightOf="@id/imgHLCity" />
 
@@ -94,67 +70,37 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/edtHouseLocatedCity"
             android:layout_toRightOf="@id/imgHLCity"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="60dp"
-            android:textColor="@color/grey"
             android:id="@+id/txtHouseLocatedCity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hl_city" />
+            android:text="@string/hl_city"
+            style="@style/txtHint"/>
 
         <ImageView
             android:id="@+id/imgHLRequiredAmount"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
             android:layout_below="@id/txtHouseLocatedCity"
-            android:src="@mipmap/seekbar_thumb" />
+            style="@style/fieldImage"/>
 
         <EditText
             android:id="@+id/edtRequired"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:hint="@string/required_loan_amount"
-            android:paddingLeft="5dp"
-            android:background="@drawable/edit_rounded_background"
+            style="@style/edtLoanFields"
             android:layout_toRightOf="@id/imgHLRequiredAmount"
             android:layout_below="@id/txtHouseLocatedCity" />
 
         <TextView
             android:id="@+id/txtRequiredLoanAmount"
             android:layout_below="@id/edtRequired"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="60dp"
-            android:textColor="@color/grey"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/txtHint"
             android:text="@string/required_loan_amount" />
 
         <ImageView
             android:id="@+id/imgHLLoanRePaymentPeriod"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
             android:layout_below="@id/txtRequiredLoanAmount"
-            android:src="@mipmap/seekbar_thumb" />
+            style="@style/fieldImage"/>
 
         <EditText
             android:id="@+id/edtLoanRepaymentPeriod"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:hint="@string/loan_repayment_period"
-            android:paddingLeft="5dp"
-            android:background="@drawable/edit_rounded_background"
+            style="@style/edtLoanFields"
             android:layout_toRightOf="@id/imgHLLoanRePaymentPeriod"
             android:layout_below="@id/txtRequiredLoanAmount" />
 
@@ -162,25 +108,15 @@
             android:id="@+id/txtLoanRepaymentPeriod"
             android:layout_alignParentLeft="true"
             android:layout_below="@id/edtLoanRepaymentPeriod"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="60dp"
-            android:textColor="@color/grey"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/txtHint"
             android:text="@string/loan_repayment_period" />
 
         <Button
             android:id="@+id/btnProceedF"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/btnProceed"
             android:text="Proceed"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/txtLoanRepaymentPeriod"
-            android:background="@drawable/btn_ripple"
-            android:layout_margin="10dp"
-            android:textColor="@color/white"
-            android:gravity="center" />
-
+             />
 
     </RelativeLayout>
 </ScrollView>

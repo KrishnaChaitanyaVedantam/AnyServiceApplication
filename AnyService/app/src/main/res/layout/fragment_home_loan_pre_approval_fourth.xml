@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtHLPancardNumber"
+            style="@style/txtHint"
+            android:text="Enter Pancard Number"
+            android:layout_below="@+id/edtHLPancard"/>
+
+        <ImageView
+            android:id="@+id/imgHLPancardNumber"
+            android:layout_alignParentTop="true"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLPancard"
+            style="@style/edtLoanFields"
+            android:hint="Pancard Number"
+            android:layout_toRightOf="@id/imgHLPancardNumber" />
+
+        <!--AP - Address Proof -->
+        <TextView
+            android:id="@+id/txtHLAP"
+            style="@style/txtHint"
+            android:text="Address Proof"
+            android:layout_below="@+id/spnHLAP"/>
+
+        <ImageView
+            android:id="@+id/imgHLAP"
+            android:layout_below="@id/txtHLPancardNumber"
+            style="@style/fieldImage"/>
+
+
+        <com.niharinfo.anyservice.Utilities.NiceSpinner
+            android:id="@+id/spnHLAP"
+            style="@style/niceSpinner"
+            android:layout_below="@id/txtHLPancardNumber"
+            android:layout_toRightOf="@id/imgHLAP"></com.niharinfo.anyservice.Utilities.NiceSpinner>
+
+        <!--SAP - SelectedAddressProof -->
+
+        <TextView
+            android:id="@+id/txtHLSAP"
+            style="@style/txtHint"
+            android:text="Choose File..."
+            android:layout_below="@+id/edtHLSAP"/>
+
+        <ImageView
+            android:id="@+id/imgHLSAP"
+            android:layout_below="@id/txtHLAP"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLSAP"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Choose File..."
+            android:layout_below="@id/txtHLAP"
+            android:layout_toRightOf="@id/imgHLSAP" />
+
+        <Button
+            android:id="@+id/btnHLChoose"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLAP"
+            android:layout_toRightOf="@id/edtHLSAP"/>
+
+        <TextView
+            android:id="@+id/txtHLSanction"
+            style="@style/txtHint"
+            android:text="Sanction Letter"
+            android:layout_below="@+id/edtHLSanction"/>
+
+        <ImageView
+            android:id="@+id/imgHLSanction"
+            android:layout_below="@id/txtHLSAP"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLSanction"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Sanction Letter"
+            android:layout_below="@id/txtHLSAP"
+            android:layout_toRightOf="@id/imgHLSanction" />
+
+        <Button
+            android:id="@+id/btnHLSanctionChoose"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLSAP"
+            android:layout_toRightOf="@id/edtHLSanction"/>
+
+        <!-- Loan Outstanding Letter    - LOL -->
+        <TextView
+            android:id="@+id/txtHLLOL"
+            style="@style/txtHint"
+            android:text="Loan Outstanding Letter"
+            android:layout_below="@+id/edtHLLOL"/>
+
+        <ImageView
+            android:id="@+id/imgHLLOL"
+            android:layout_below="@id/txtHLSanction"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLLOL"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Loan Outstanding Letter"
+            android:layout_below="@id/txtHLSanction"
+            android:layout_toRightOf="@id/imgHLLOL" />
+
+        <Button
+            android:id="@+id/btnHLLOL"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLSanction"
+            android:layout_toRightOf="@id/edtHLLOL"/>
+
+        <!--List Of Preperty Papers Submitted   -   lops-->
+
+        <TextView
+            android:id="@+id/txtHLlops"
+            style="@style/txtHint"
+            android:text="List Of Preperty Papers Submitted"
+            android:layout_below="@+id/edtHLlops"/>
+
+        <ImageView
+            android:id="@+id/imgHLlops"
+            android:layout_below="@id/txtHLLOL"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLlops"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="List Of Preperty Papers Submitted"
+            android:layout_below="@id/txtHLLOL"
+            android:layout_toRightOf="@id/imgHLlops" />
+
+        <Button
+            android:id="@+id/btnHLlops"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLLOL"
+            android:layout_toRightOf="@id/edtHLlops"/>
+
+        <!-- Bank Statement For Last 6 Months - bsfl-->
+        <TextView
+            android:id="@+id/txtHLbsfl"
+            style="@style/txtHint"
+            android:text="Bank Statement For Last 6 Months"
+            android:layout_below="@+id/edtHLbsfl"/>
+
+        <ImageView
+            android:id="@+id/imgHLbsfl"
+            android:layout_below="@id/txtHLlops"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLbsfl"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Bank Statement For Last 6 Months"
+            android:layout_below="@id/txtHLlops"
+            android:layout_toRightOf="@id/imgHLbsfl" />
+
+        <Button
+            android:id="@+id/btnHLbsfl"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLlops"
+            android:layout_toRightOf="@id/edtHLbsfl"/>
+
+        <!-- Latest form 16 (A/B) - lf -->
+        <TextView
+            android:id="@+id/txtHLlf"
+            style="@style/txtHint"
+            android:text="Latest form 16 (A/B)"
+            android:layout_below="@+id/edtHLlf"/>
+
+        <ImageView
+            android:id="@+id/imgHLlf"
+            android:layout_below="@id/txtHLbsfl"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLlf"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Latest form 16 (A/B)"
+            android:layout_below="@id/txtHLbsfl"
+            android:layout_toRightOf="@id/imgHLlf" />
+
+        <Button
+            android:id="@+id/btnHLlf"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLbsfl"
+            android:layout_toRightOf="@id/edtHLlf"/>
+
+        <!-- Latest 3 months Salary Slip - lmss-->
+
+        <TextView
+            android:id="@+id/txtHLlmss"
+            style="@style/txtHint"
+            android:text="Latest 3 months Salary Slip"
+            android:layout_below="@+id/edtHLlmss"/>
+
+        <ImageView
+            android:id="@+id/imgHLlmss"
+            android:layout_below="@id/txtHLlf"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLlmss"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Latest 3 months Salary Slip"
+            android:layout_below="@id/txtHLlf"
+            android:layout_toRightOf="@id/imgHLlmss" />
+
+        <Button
+            android:id="@+id/btnHLlmss"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLlf"
+            android:layout_toRightOf="@id/edtHLlf"/>
+
+        <!-- Housing Loan Details If Any - dia-->
+        <TextView
+            android:id="@+id/txtHLdia"
+            style="@style/txtHint"
+            android:text="Housing Loan Details If Any"
+            android:layout_below="@+id/edtHLdia"/>
+
+        <ImageView
+            android:id="@+id/imgHLdia"
+            android:layout_below="@id/txtHLlmss"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLdia"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Housing Loan Details If Any"
+            android:layout_below="@id/txtHLlmss"
+            android:layout_toRightOf="@id/imgHLdia" />
+
+        <Button
+            android:id="@+id/btnHLdia"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLlmss"
+            android:layout_toRightOf="@id/edtHLdia"/>
+
+        <!-- Photo copy of company id - pco-->
+        <TextView
+            android:id="@+id/txtHLpco"
+            style="@style/txtHint"
+            android:text="Photo copy of company id"
+            android:layout_below="@+id/edtHLpco"/>
+
+        <ImageView
+            android:id="@+id/imgHLpco"
+            android:layout_below="@id/txtHLdia"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLpco"
+            style="@style/edtLoanFieldsNonEditable"
+            android:hint="Photo copy of company id"
+            android:layout_below="@id/txtHLdia"
+            android:layout_toRightOf="@id/imgHLpco" />
+
+        <Button
+            android:id="@+id/btnHLpco"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLdia"
+            android:layout_toRightOf="@id/edtHLpco"/>
+
+        <!-- Last 3 years income tax return(Bussiness) yib -->
+        <TextView
+            android:id="@+id/txtHLyib"
+            style="@style/txtHint"
+            android:text="Last 3 years income tax return(Bussiness)"
+            android:layout_below="@+id/edtHLyib"/>
+
+        <ImageView
+            android:id="@+id/imgHLyib"
+            android:layout_below="@id/txtHLpco"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLyib"
+            style="@style/edtLoanFields"
+            android:hint="Last 3 years income tax return(Bussiness)"
+            android:editable="false"
+            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:layout_below="@id/txtHLpco"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/imgHLyib" />
+
+        <Button
+            android:id="@+id/btnHLyib"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLpco"
+            android:layout_toRightOf="@id/edtHLyib"/>
+
+        <!-- Balance sheet for last 3 yrs - bsf -->
+        <TextView
+            android:id="@+id/txtHLbsf"
+            style="@style/txtHint"
+            android:text="Balance sheet for last 3 yrs"
+            android:layout_below="@+id/edtHLbsf"/>
+
+        <ImageView
+            android:id="@+id/imgHLbsf"
+            android:layout_below="@id/txtHLyib"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLbsf"
+            style="@style/edtLoanFields"
+            android:hint="Balance sheet for last 3 yrs"
+            android:editable="false"
+            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:layout_below="@id/txtHLyib"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/imgHLbsf" />
+
+        <Button
+            android:id="@+id/btnHLbsf"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLyib"
+            android:layout_toRightOf="@id/edtHLbsf"/>
+
+        <!-- Profit&Loss for last 3 years - plfl -->
+        <TextView
+            android:id="@+id/txtHLplfl"
+            style="@style/txtHint"
+            android:text="Profit &amp; Loss for last 3 years"
+            android:layout_below="@+id/edtHLplfl"/>
+
+        <ImageView
+            android:id="@+id/imgHLplfl"
+            android:layout_below="@id/txtHLbsf"
+            style="@style/fieldImage"/>
+
+        <EditText
+            android:id="@+id/edtHLplfl"
+            style="@style/edtLoanFields"
+            android:hint="Profit &amp; Loss for last 3 years"
+            android:editable="false"
+            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:layout_below="@id/txtHLbsf"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/imgHLplfl" />
+
+        <Button
+            android:id="@+id/btnHLplfl"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Choose File"
+            android:layout_below="@id/txtHLbsf"
+            android:layout_toRightOf="@id/edtHLplfl"/>
+
+        <Button
+            android:id="@+id/btnHLApply"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Apply"
+            android:layout_below="@id/txtHLplfl"/>
+
+        <Button
+            android:id="@+id/btnHLReset"
+            style="@style/btnProceed"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:text="Reset"
+            android:layout_below="@id/btnHLApply"/>
+
+    </RelativeLayout>
+
+</ScrollView>
